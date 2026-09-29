@@ -1,0 +1,6 @@
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#16222b}
+:root:not([data-theme="light"]){--bg:#16222b}
+:root[data-theme="dark"]{--bg:#16222b}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+body{margin:0;height:100%;background:var(--bg);display:flex;align-items:center;justify-content:center;overflow:hidden}
+canvas{width:min(100vw,160dvh);aspect-ratio:8/5;image-rendering:pixelated;display:block}
