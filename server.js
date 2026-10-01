@@ -11,6 +11,8 @@ const clean = r => ({
   puntos: Math.max(0, Math.min(Math.floor(+r.puntos) || 0, 1e9)),
   nivel: String(r.nivel || '').slice(0, 40),
   oleada: Math.max(0, Math.min(Math.floor(+r.oleada) || 0, 9999)),
+  modo: r.modo == 'diario' ? 'diario' : 'normal',
+  dificultad: ['Fácil', 'Normal', 'Difícil'].includes(r.dificultad) ? r.dificultad : 'Normal',
   fecha: String(r.fecha || '').slice(0, 19)});
 const send = (res, code, obj) => { res.writeHead(code, {'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store'}); res.end(JSON.stringify(obj)); };
 http.createServer((req, res) => {

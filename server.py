@@ -28,6 +28,8 @@ def clean(r):
             'puntos': max(0, min(int(r.get('puntos', 0)), 10**9)),
             'nivel': str(r.get('nivel', ''))[:40],
             'oleada': max(0, min(int(r.get('oleada', 0)), 9999)),
+            'modo': 'diario' if r.get('modo') == 'diario' else 'normal',
+            'dificultad': r.get('dificultad') if r.get('dificultad') in ('Fácil', 'Normal', 'Difícil') else 'Normal',
             'fecha': str(r.get('fecha', ''))[:19]}
 
 class Handler(SimpleHTTPRequestHandler):
